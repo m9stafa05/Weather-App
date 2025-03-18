@@ -1,6 +1,7 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubits/git_weather_cubits/get_weather_cubits.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -20,20 +21,20 @@ class SearchView extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 10,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Center(
           child: TextField(
             onSubmitted: (value) {
-              log(value);
+              BlocProvider.of<GetWeatherCubits>(
+                context,
+              ).getWeather(cityName: value);
+              Navigator.pop(context);
             },
             decoration: InputDecoration(
-              contentPadding:
-                  EdgeInsets.symmetric(
-                    vertical: 32,
-                    horizontal: 16,
-                  ),
+              contentPadding: EdgeInsets.symmetric(
+                vertical: 32,
+                horizontal: 16,
+              ),
               labelText: 'Search',
               labelStyle: TextStyle(
                 color: Colors.black,
@@ -45,16 +46,14 @@ class SearchView extends StatelessWidget {
                 color: const Color(0xFFABABAB),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius:
-                    BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8),
                 borderSide: BorderSide(
                   color: Colors.blue,
                   width: 2,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius:
-                    BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(
                   color: Colors.blue,
                   width: 3,

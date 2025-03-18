@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/models/weather_model.dart';
 
 class WeatherInfoWidget extends StatelessWidget {
-  const WeatherInfoWidget({super.key});
-
+  const WeatherInfoWidget({
+    super.key,
+    required this.weatherModel,
+  });
+  final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -10,14 +14,14 @@ class WeatherInfoWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Alex',
+            weatherModel.cityName,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,
             ),
           ),
           Text(
-            'Updetaed At 2:38PM',
+            'Last Updeted ${weatherModel.date.hour} : ${weatherModel.date.minute} ',
             style: TextStyle(fontSize: 25),
           ),
           SizedBox(height: 10),
@@ -28,12 +32,12 @@ class WeatherInfoWidget extends StatelessWidget {
                   MainAxisAlignment.spaceBetween,
               children: [
                 Image(
-                  image: AssetImage(
-                    'assets/images/cloudy.png',
+                  image: NetworkImage(
+                    'https:${weatherModel.image}',
                   ),
                 ),
                 Text(
-                  '17',
+                  weatherModel.currentTem.toString(),
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 30,
@@ -44,14 +48,14 @@ class WeatherInfoWidget extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'MaxTem: 20',
+                      'MaxTem: ${weatherModel.maxTem.round()}',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
                     Text(
-                      'MinTem: 8',
+                      'MinTem: ${weatherModel.minTem.round()}',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -63,7 +67,7 @@ class WeatherInfoWidget extends StatelessWidget {
             ),
           ),
           Text(
-            'Ligh Rain',
+            weatherModel.weatherCondtion,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,
