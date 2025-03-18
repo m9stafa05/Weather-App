@@ -21,7 +21,7 @@ class WeatherInfoWidget extends StatelessWidget {
             ),
           ),
           Text(
-            'Last Updeted ${weatherModel.date.hour} : ${weatherModel.date.minute} ',
+            'Last Updeted ${weatherModel.date.hour} : ${weatherModel.date.minute}',
             style: TextStyle(fontSize: 25),
           ),
           SizedBox(height: 10),
