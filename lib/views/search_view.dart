@@ -18,7 +18,6 @@ class SearchView extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),

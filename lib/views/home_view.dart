@@ -4,9 +4,7 @@ import 'package:weather_app/cubits/git_weather_cubits/get_weather_cubits.dart';
 import 'package:weather_app/cubits/git_weather_cubits/get_weather_states.dart';
 import 'package:weather_app/views/search_view.dart';
 import 'package:weather_app/widget/no_weather_widget.dart';
-// import 'package:weather_app/widget/no_weather_widget.dart';
 import 'package:weather_app/widget/weather_info_widget.dart';
-// import 'package:weather_app/widget/weather_info_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -15,7 +13,6 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
         title: Text(
           'Weather App',
           style: TextStyle(
@@ -46,13 +43,13 @@ class HomeView extends StatelessWidget {
       body: BlocBuilder<GetWeatherCubits, WeatherState>(
         builder: (context, state) {
           if (state is WeatherInitialState) {
-            return NoWeatherWidget();
+            return const NoWeatherWidget();
           } else if (state is WeatherLoadedState) {
-            return WeatherInfoWidget(
+            return  WeatherInfoWidget(
               weatherModel: state.weatherModel,
             );
           } else {
-            return Text('Opps , There Was An Error');
+            return const Text('Opps , There Was An Error');
           }
         },
       ),
