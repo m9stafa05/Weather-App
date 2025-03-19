@@ -1,7 +1,5 @@
-# Weather-App
+# Weather App
 Flutter Application , Desplay The Daily Weather
-=======
-# weather_app
 
 A new Flutter project.
 
