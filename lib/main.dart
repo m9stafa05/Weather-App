@@ -39,7 +39,6 @@ class WeatherApp extends StatelessWidget {
                     ),
                     
                   ),
-
                   home: HomeView(),
                 );
               },
