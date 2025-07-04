@@ -3,10 +3,7 @@ import 'package:weather_app/main.dart';
 import 'package:weather_app/models/weather_model.dart';
 
 class WeatherInfoWidget extends StatelessWidget {
-  const WeatherInfoWidget({
-    super.key,
-    required this.weatherModel,
-  });
+  const WeatherInfoWidget({super.key, required this.weatherModel});
   final WeatherModel weatherModel;
   @override
   Widget build(BuildContext context) {
@@ -16,18 +13,10 @@ class WeatherInfoWidget extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             getConditionColor(weatherModel.weatherCondition),
-            getConditionColor(
-              weatherModel.weatherCondition,
-            )[300]!,
-            getConditionColor(
-              weatherModel.weatherCondition,
-            )[200]!,
-            getConditionColor(
-              weatherModel.weatherCondition,
-            )[100]!,
-            getConditionColor(
-              weatherModel.weatherCondition,
-            )[50]!,
+            getConditionColor(weatherModel.weatherCondition)[300]!,
+            getConditionColor(weatherModel.weatherCondition)[200]!,
+            getConditionColor(weatherModel.weatherCondition)[100]!,
+            getConditionColor(weatherModel.weatherCondition)[50]!,
           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
@@ -52,8 +41,7 @@ class WeatherInfoWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15),
               child: Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image(
                     image: NetworkImage(
