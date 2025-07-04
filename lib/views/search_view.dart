@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubits/git_weather_cubits/get_weather_cubits.dart';
@@ -41,15 +40,10 @@ class SearchView extends StatelessWidget {
               ),
               suffixIcon: Icon(Icons.search),
               hintText: 'Enter City Name',
-              hintStyle: TextStyle(
-                color: const Color(0xFFABABAB),
-              ),
+              hintStyle: TextStyle(color: const Color(0xFFABABAB)),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(
-                  color: Colors.blue,
-                  width: 2,
-                ),
+                borderSide: BorderSide(color: Colors.blue, width: 2),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
