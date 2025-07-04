@@ -45,11 +45,19 @@ class HomeView extends StatelessWidget {
           if (state is WeatherInitialState) {
             return const NoWeatherWidget();
           } else if (state is WeatherLoadedState) {
-            return  WeatherInfoWidget(
+            return WeatherInfoWidget(
               weatherModel: state.weatherModel,
             );
           } else {
-            return const Text('Opps , There Was An Error');
+            return Center(
+              child: const Text(
+                'Opps , There Was An Error',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            );
           }
         },
       ),

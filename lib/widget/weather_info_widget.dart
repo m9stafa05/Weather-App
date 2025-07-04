@@ -19,13 +19,13 @@ class WeatherInfoWidget extends StatelessWidget {
             getConditionColor(
               weatherModel.weatherCondtion,
             )[300]!,
-                        getConditionColor(
+            getConditionColor(
               weatherModel.weatherCondtion,
             )[200]!,
-                        getConditionColor(
+            getConditionColor(
               weatherModel.weatherCondtion,
             )[100]!,
-                        getConditionColor(
+            getConditionColor(
               weatherModel.weatherCondtion,
             )[50]!,
           ],
@@ -45,7 +45,7 @@ class WeatherInfoWidget extends StatelessWidget {
               ),
             ),
             Text(
-              'Last Updeted ${weatherModel.date.hour} : ${weatherModel.date.minute}',
+              'Last Updeted ${weatherModel.date.hour}:${weatherModel.date.minute}',
               style: TextStyle(fontSize: 25),
             ),
             SizedBox(height: 10),
