@@ -33,7 +33,7 @@ class WeatherApp extends StatelessWidget {
                                   context,
                                 )
                                 .weatherModel
-                                ?.weatherCondtion ??
+                                ?.weatherCondition ??
                             "null",
                       ),
                     ),

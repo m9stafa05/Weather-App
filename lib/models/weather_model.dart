@@ -5,7 +5,7 @@ class WeatherModel {
   final double currentTem;
   final double maxTem;
   final double minTem;
-  final String weatherCondtion;
+  final String weatherCondition;
 
   WeatherModel({
     required this.cityName,
@@ -14,7 +14,7 @@ class WeatherModel {
     required this.currentTem,
     required this.maxTem,
     required this.minTem,
-    required this.weatherCondtion,
+    required this.weatherCondition,
   });
 
   factory WeatherModel.fromJson(json) {
@@ -27,7 +27,7 @@ class WeatherModel {
           json['forecast']['forecastday'][0]['day']['maxtemp_c'],
       minTem:
           json['forecast']['forecastday'][0]['day']['mintemp_c'],
-      weatherCondtion:
+      weatherCondition:
           json['forecast']['forecastday'][0]['day']['condition']['text'],
     );
   }

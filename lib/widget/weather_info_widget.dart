@@ -15,18 +15,18 @@ class WeatherInfoWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            getConditionColor(weatherModel.weatherCondtion),
+            getConditionColor(weatherModel.weatherCondition),
             getConditionColor(
-              weatherModel.weatherCondtion,
+              weatherModel.weatherCondition,
             )[300]!,
             getConditionColor(
-              weatherModel.weatherCondtion,
+              weatherModel.weatherCondition,
             )[200]!,
             getConditionColor(
-              weatherModel.weatherCondtion,
+              weatherModel.weatherCondition,
             )[100]!,
             getConditionColor(
-              weatherModel.weatherCondtion,
+              weatherModel.weatherCondition,
             )[50]!,
           ],
           begin: Alignment.topCenter,
@@ -84,7 +84,7 @@ class WeatherInfoWidget extends StatelessWidget {
               ),
             ),
             Text(
-              weatherModel.weatherCondtion,
+              weatherModel.weatherCondition,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,

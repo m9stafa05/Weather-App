@@ -32,11 +32,7 @@ class HomeView extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(
-              Icons.search,
-              size: 35,
-              color: Colors.white,
-            ),
+            icon: Icon(Icons.search, size: 35, color: Colors.white),
           ),
         ],
       ),
